@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 const Control = React.lazy(() =>
-  import(/* webpackChunkName: "utils" */ "../Control")
+  import(/* webpackChunkName: "control" */ "../Control")
 );
 
 const App = () => {
@@ -18,7 +18,7 @@ const App = () => {
   return (
     <>
       <h1>App {text}</h1>
-      {/* <Control /> */}
+      <Control />
     </>
   );
 };
