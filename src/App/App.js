@@ -1,34 +1,11 @@
-import React, { Suspense, useState, useEffect } from "react";
+import React from "react";
 
-const Control = React.lazy(() =>
-  import(/* webpackChunkName: "control" */ "../Control")
-);
+import classes from "./App.module.css";
 
 const App = () => {
-  const [text, setText] = useState("");
-  const [isControlVisible, setIsControlVisible] = useState(false);
-
-  useEffect(() => {
-    (async () => {
-      const module = await import(/* webpackChunkName: "utils" */ "../utils");
-      const txt = module.default();
-      setText(txt);
-    })();
-  }, []);
-
-  const toggleControl = () => {
-    setIsControlVisible((prev) => !prev);
-  };
-
   return (
     <>
-      <h1>App {text}</h1>
-      <button onClick={toggleControl}>Toggle Control component</button>
-      {isControlVisible && (
-        <Suspense fallback={<div>Loading...</div>}>
-          <Control />
-        </Suspense>
-      )}
+      <h1 className={classes.App}>CauldronJS</h1>
     </>
   );
 };

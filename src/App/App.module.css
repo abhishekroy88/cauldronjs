@@ -1,0 +1,12 @@
+@font-face {
+  font-family: "carolingia";
+  src: url("../../public/assets/fonts/carolingia.ttf");
+}
+
+.App {
+  background-color: #0e1c36;
+  color: #d7f9ff;
+  font-family: "carolingia", Arial, sans-serif;
+  font-size: 50px;
+  font-weight: 300;
+}
