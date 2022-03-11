@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { Suspense, useState, useEffect } from "react";
 
 const Control = React.lazy(() =>
   import(/* webpackChunkName: "control" */ "../Control")
@@ -6,6 +6,7 @@ const Control = React.lazy(() =>
 
 const App = () => {
   const [text, setText] = useState("");
+  const [isControlVisible, setIsControlVisible] = useState(false);
 
   useEffect(() => {
     (async () => {
@@ -15,10 +16,19 @@ const App = () => {
     })();
   }, []);
 
+  const toggleControl = () => {
+    setIsControlVisible((prev) => !prev);
+  };
+
   return (
     <>
       <h1>App {text}</h1>
-      <Control />
+      <button onClick={toggleControl}>Toggle Control component</button>
+      {isControlVisible && (
+        <Suspense fallback={<div>Loading...</div>}>
+          <Control />
+        </Suspense>
+      )}
     </>
   );
 };
