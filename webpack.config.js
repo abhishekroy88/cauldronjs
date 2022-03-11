@@ -4,11 +4,12 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 module.exports = {
   mode: "development",
   entry: {
+    runtime: "regenerator-runtime/runtime.js",
     index: "./src/index.js",
-    app: "./src/App/App.js",
   },
   output: {
     filename: "[name].bundle.js",
+    chunkFilename: "[name].bundle.js",
     path: path.resolve(__dirname, "dist"),
     clean: true,
   },
