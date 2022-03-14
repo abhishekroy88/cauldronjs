@@ -1,7 +1,4 @@
-@font-face {
-  font-family: "carolingia";
-  src: url("../../public/assets/fonts/carolingia.ttf");
-}
+@import "../index.css";
 
 .App {
   background-color: #0e1c36;
