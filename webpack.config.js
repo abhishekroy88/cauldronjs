@@ -19,7 +19,10 @@ module.exports = {
   },
   devtool: 'inline-source-map',
   plugins: [
-    new HtmlWebpackPlugin({ template: './public/index.html' }),
+    new HtmlWebpackPlugin({
+      template: './public/index.html',
+      favicon: './public/assets/images/favicon.ico',
+    }),
     new MiniCssExtractPlugin(),
   ],
   optimization: {
@@ -50,6 +53,10 @@ module.exports = {
       {
         test: /\.(ttf|otf|woff|woff2)$/,
         type: 'asset/resource',
+      },
+      {
+        test: /\.ico$/,
+        use: ['file-loader'],
       },
     ],
   },
