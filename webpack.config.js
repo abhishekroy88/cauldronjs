@@ -1,30 +1,30 @@
-const path = require("path");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const path = require('path')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 module.exports = {
-  mode: "development",
+  mode: 'development',
   entry: {
-    runtime: "regenerator-runtime/runtime.js",
-    index: "./src/index.js",
+    runtime: 'regenerator-runtime/runtime.js',
+    index: './src/index.js',
   },
   output: {
-    filename: "[name].bundle.js",
-    chunkFilename: "[name].bundle.js",
-    path: path.resolve(__dirname, "dist"),
+    filename: '[name].bundle.js',
+    chunkFilename: '[name].bundle.js',
+    path: path.resolve(__dirname, 'dist'),
     clean: true,
   },
   devServer: {
     port: 3000,
   },
-  devtool: "inline-source-map",
+  devtool: 'inline-source-map',
   plugins: [
-    new HtmlWebpackPlugin({ template: "./public/index.html" }),
+    new HtmlWebpackPlugin({ template: './public/index.html' }),
     new MiniCssExtractPlugin(),
   ],
   optimization: {
     splitChunks: {
-      chunks: "all",
+      chunks: 'all',
     },
   },
   module: {
@@ -32,25 +32,25 @@ module.exports = {
       {
         test: /\.(js|jsx)$/,
         use: {
-          loader: "babel-loader",
+          loader: 'babel-loader',
           options: {
-            presets: ["@babel/preset-env", "@babel/preset-react"],
+            presets: ['@babel/preset-env', '@babel/preset-react'],
           },
         },
         exclude: /node_modules/,
       },
       {
         test: /\.css$/,
-        use: [MiniCssExtractPlugin.loader, "css-loader"],
+        use: [MiniCssExtractPlugin.loader, 'css-loader'],
       },
       {
         test: /\.(png|jp(e*)g|svg|gif)$/,
-        type: "asset/resource",
+        type: 'asset/resource',
       },
       {
         test: /\.(ttf|otf|woff|woff2)$/,
-        type: "asset/resource",
+        type: 'asset/resource',
       },
     ],
   },
-};
+}

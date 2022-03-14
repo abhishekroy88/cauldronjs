@@ -1,9 +1,9 @@
-@import "../index.css";
+@import '../index.css';
 
 .App {
   background-color: #0e1c36;
   color: #d7f9ff;
-  font-family: "carolingia", Arial, sans-serif;
+  font-family: 'carolingia', Arial, sans-serif;
   font-size: 50px;
   font-weight: 300;
 }
