@@ -6,7 +6,6 @@ const App = () => {
   return (
     <>
       <h1 className={classes.App}>CauldronJS</h1>
-      <h1>Just testing</h1>
     </>
   )
 }
