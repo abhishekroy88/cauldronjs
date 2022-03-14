@@ -10,6 +10,15 @@
     "lint": "eslint .",
     "lint:fix": "eslint --fix ."
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.+(js|jsx)": "eslint --fix",
+    "*.+(json|css|md)": "prettier --write"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -25,6 +34,8 @@
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.29.4",
     "html-webpack-plugin": "^5.5.0",
+    "husky": "^7.0.4",
+    "lint-staged": "^12.3.5",
     "mini-css-extract-plugin": "^2.6.0",
     "prettier": "^2.5.1",
     "style-loader": "^3.3.1",
