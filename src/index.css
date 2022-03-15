@@ -2,3 +2,7 @@
   font-family: 'carolingia';
   src: url('../public/assets/fonts/carolingia.ttf');
 }
+
+h1 {
+  margin: 0;
+}
