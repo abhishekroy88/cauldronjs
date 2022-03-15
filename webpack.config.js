@@ -54,10 +54,6 @@ module.exports = {
         test: /\.(ttf|otf|woff|woff2)$/,
         type: 'asset/resource',
       },
-      {
-        test: /\.ico$/,
-        use: ['file-loader'],
-      },
     ],
   },
 }
