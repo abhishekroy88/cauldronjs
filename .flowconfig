@@ -1,4 +1,11 @@
 [ignore]
+.*/node_modules/.*
+.*/dist/.*
+.*/src/index\.js
+.*\.test\.js
+.*/webpack\.common\.js
+.*/webpack\.dev\.js
+.*/webpack\.prod\.js
 
 [include]
 

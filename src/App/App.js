@@ -1,13 +1,14 @@
-import React from 'react'
+// @flow
 
+import * as React from 'react'
 import classes from './App.module.css'
 
-const App = () => {
-  return (
-    <>
-      <h1 className={classes.App}>CauldronJS</h1>
-    </>
-  )
+type Props = {
+  appName: string,
+}
+
+const App = (props: Props): React.Node => {
+  return <h1 className={classes.App}>{props.appName}</h1>
 }
 
 export default App

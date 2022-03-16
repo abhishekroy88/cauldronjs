@@ -6,4 +6,4 @@ import './index.css'
 
 import App from './App/App'
 
-ReactDOM.render(<App />, document.getElementById('root'))
+ReactDOM.render(<App appName="CauldronJS" />, document.getElementById('root'))
