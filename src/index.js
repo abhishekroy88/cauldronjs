@@ -6,4 +6,12 @@ import './index.css'
 
 import App from './App/App'
 
-ReactDOM.render(<App appName="CauldronJS" />, document.getElementById('root'))
+const rootElem = document.getElementById('root')
+
+ReactDOM.render(<App appName="CauldronJS" />, rootElem)
+
+if (module.hot && process.env.NODE_ENV === 'development') {
+  module.hot.accept('./App/App', () => {
+    ReactDOM.render(<App />, rootElem)
+  })
+}

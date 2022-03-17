@@ -1,6 +1,8 @@
 // @flow
 
 import * as React from 'react'
+import { hot } from 'react-hot-loader'
+
 import classes from './App.module.css'
 
 type Props = {
@@ -11,4 +13,4 @@ const App = (props: Props): React.Node => {
   return <h1 className={classes.App}>{props.appName}</h1>
 }
 
-export default App
+export default hot(module)(App)
